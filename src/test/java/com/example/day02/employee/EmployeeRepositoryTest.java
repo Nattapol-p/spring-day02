@@ -27,4 +27,12 @@ public class EmployeeRepositoryTest {
         assertEquals(1,result.get().getId());
         assertEquals("nattapol",result.get().getName());
     }
+
+    @Test
+    public void case02(){
+        // Act
+        Optional<Employee> result = employeeRepository.findById(1);
+        // Assert
+        assertFalse(result.isPresent());
+    }
 }
