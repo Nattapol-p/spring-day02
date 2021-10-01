@@ -26,14 +26,14 @@ public class EmployeeController2Test {
     public void getById2() {
         // Arrange
         Employee employee = new Employee();
-        employee.setId(100);
+        employee.setId(1);
         employee.setName("nattapol");
-        when(employeeRepository.findById(100)).thenReturn(Optional.of(employee));
+        when(employeeRepository.findById(1)).thenReturn(Optional.of(employee));
         // Act
         EmployeeResponse result
                 = restTemplate.getForObject("/employee/1", EmployeeResponse.class);
         // Assert
-        assertEquals(100, result.getId());
+        assertEquals(1, result.getId());
         assertEquals("nattapol", result.getName());
     }
 
